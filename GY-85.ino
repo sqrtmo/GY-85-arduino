@@ -21,21 +21,21 @@ void loop()
     compassp = readFromCompass();
     gyrop = ReadGyro();
     
-//    Serial.print("accelerometer");
-//    Serial.print(" x:");
-//    Serial.print(*(  accelp));
-//    Serial.print(" y:");
-//    Serial.print(*(++accelp));
-//    Serial.print(" z:");
-//    Serial.print(*(++accelp));
-//    
-//    Serial.print("  compass");
-//    Serial.print(" x:");
-//    Serial.print(*(  compassp));
-//    Serial.print(" y:");
-//    Serial.print(*(++compassp));
-//    Serial.print(" z:");
-//    Serial.print(*(++compassp));
+    Serial.print("accelerometer");
+    Serial.print(" x:");
+    Serial.print(*(  accelp));
+    Serial.print(" y:");
+    Serial.print(*(++accelp));
+    Serial.print(" z:");
+    Serial.print(*(++accelp));
+    
+    Serial.print("  compass");
+    Serial.print(" x:");
+    Serial.print(*(  compassp));
+    Serial.print(" y:");
+    Serial.print(*(++compassp));
+    Serial.print(" z:");
+    Serial.print(*(++compassp));
     
     Serial.print("  gyro");
     Serial.print(" x:");
