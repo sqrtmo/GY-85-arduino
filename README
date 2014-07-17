@@ -1,7 +1,7 @@
-GY-85-arduino
+GY-85-arduino   !!!Not ready yet, but working!!! 
 =============
 
-A basic GY-85 raw data getter for arduino. Using IIC bus.
+A basic GY-85 raw data getter for arduino. Using IIC bus. 
 
 Wireing:
 
@@ -12,5 +12,9 @@ GNG     ->   GND
 SCL     ->   A5
 SDA     ->   A4
 
+Installation:
+
+Create a GY85 folder and move GY-85.h and GY-85.cpp inside. Move the GY85 folder to your Arduino/Libraries folder.
+After that GY-85.ino should compile.
 
 
