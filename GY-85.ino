@@ -1,5 +1,4 @@
 #include <Wire.h>
-#include "Arduino.h"
 #include "GY-85.h"
 
 void setup()
