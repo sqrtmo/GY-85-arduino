@@ -17,6 +17,6 @@ Installation:
 After downloading you have to remove dashes from the folder name, then move the folder to your:
 For Windows- Program Files/Arduino/Libraries.
 For MacOSX-  Documents/Arduino/Libraries.
-Now restart the Arduino application, GY85 should appear in your File->Eaxmples.
+Now restart the Arduino application. GY85 should appear in your File->Eaxmples.
 
 
