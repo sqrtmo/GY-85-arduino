@@ -14,9 +14,9 @@ SDA     ->   A4
 
 Installation:
 
-Create folder named GY85 and move GY-85.h and GY-85.cpp inside. Move the GY85 folder to your:
+After downloading you have to remove dashes from the folder name, after that move the folder to your:
 For Windows- Program Files/Arduino/Libraries.
 For MacOSX-  Documents/Arduino/Libraries.
-After that GY-85.ino should compile.
+Now restart the Arduino application, GY85 should appear in your File->Eaxmples.
 
 
