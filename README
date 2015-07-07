@@ -12,7 +12,7 @@ GND     ->   GND
 SCL     ->   A5
 SDA     ->   A4
 
-for other arduino you have to check the IIC pins!
+For other arduino boards you have to check the IIC pins!
 
 Installation:
 
