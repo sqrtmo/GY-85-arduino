@@ -12,6 +12,8 @@ GND     ->   GND
 SCL     ->   A5
 SDA     ->   A4
 
+for other arduino you have to check the IIC pins!
+
 Installation:
 
 After downloading you have to remove dashes from the folder name, then move the folder to your:
