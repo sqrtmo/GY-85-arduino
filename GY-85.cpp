@@ -20,7 +20,7 @@ void SetAccelerometer()
 
 int* readFromAccelerometer()
 {
-    int axis[3];
+    static int axis[3];
     int buff[6];
     
     Wire.beginTransmission( ADXL345 );      // start transmission to device
@@ -56,7 +56,7 @@ void SetCompass()
 
 int* readFromCompass()
 {
-    int axis[3];
+    static int axis[3];
     
     //Tell the HMC5883 where to begin reading data
     Wire.beginTransmission( HMC5883 );
@@ -132,7 +132,7 @@ void GyroCalibrate(){
 
 float* ReadGyro()
 {
-    float axis[4];
+    static float axis[4];
     
     Wire.beginTransmission( ITG3200 );
     Wire.write( 0x1B );
