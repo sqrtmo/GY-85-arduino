@@ -1,7 +1,8 @@
-GY-85-arduino   !!!Not ready yet, but still working!!! 
+GY-85-arduino
 =============
 
 A basic GY-85 raw data getter for arduino. Using IIC bus. 
+Tested with arduino 1.6.5 IDE.
 
 Wireing for arduino UNO:
 
