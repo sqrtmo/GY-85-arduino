@@ -1,6 +1,6 @@
-#include "GY85.h"
+#include "GY_85.h"
 
-void SetAccelerometer()
+void GY_85::SetAccelerometer()
 {
     //Put the ADXL345 into +/- 4G range by writing the value 0x01 to the DATA_FORMAT register.
     Wire.beginTransmission( ADXL345 );      // start transmission to device
@@ -16,7 +16,7 @@ void SetAccelerometer()
     
 }
 
-int* readFromAccelerometer()
+int* GY_85::readFromAccelerometer()
 {
     static int axis[3];
     int buff[6];
@@ -43,7 +43,7 @@ int* readFromAccelerometer()
     return axis;
 }
 //----------------------------------------
-void SetCompass()
+void GY_85::SetCompass()
 {
     //Put the HMC5883 IC into the correct operating mode
     Wire.beginTransmission( HMC5883 );      //open communication with HMC5883
@@ -52,7 +52,7 @@ void SetCompass()
     Wire.endTransmission();
 }
 
-int* readFromCompass()
+int* GY_85::readFromCompass()
 {
     static int axis[3];
     
@@ -81,30 +81,8 @@ int g_offx = 0;
 int g_offy = 0;
 int g_offz = 0;
 
-void GyroCalibrate(){
-    
-    int tmpx = 0;
-    int tmpy = 0;
-    int tmpz = 0;
-    
-    g_offx = 0;
-    g_offy = 0;
-    g_offz = 0;
-    
-    for (uint8_t i = 0; i < 10; i ++) //take the mean from 10 gyro probes and divide it from the current probe
-    {
-        delay(10);
-        float* gp = ReadGyro();
-        tmpx += *(  gp);
-        tmpy += *(++gp);
-        tmpz += *(++gp);
-    }
-    g_offx = tmpx/10;
-    g_offy = tmpy/10;
-    g_offz = tmpz/10;
-}
-
-void SetGyro() {
+void GY_85::SetGyro()
+{
     Wire.beginTransmission( ITG3200 );
     Wire.write( 0x3E );
     Wire.write( 0x00 );
@@ -130,7 +108,30 @@ void SetGyro() {
     GyroCalibrate();
 }
 
-float* ReadGyro()
+void GY_85::GyroCalibrate()
+{
+    static int tmpx = 0;
+    static int tmpy = 0;
+    static int tmpz = 0;
+    
+    g_offx = 0;
+    g_offy = 0;
+    g_offz = 0;
+    
+    for( uint8_t i = 0; i < 10; i ++ ) //take the mean from 10 gyro probes and divide it from the current probe
+    {
+        delay(10);
+        float* gp = readGyro();
+        tmpx += *(  gp);
+        tmpy += *(++gp);
+        tmpz += *(++gp);
+    }
+    g_offx = tmpx/10;
+    g_offy = tmpy/10;
+    g_offz = tmpz/10;
+}
+
+float* GY_85::readGyro()
 {
     static float axis[4];
     
@@ -158,7 +159,7 @@ float* ReadGyro()
     return axis;
 }
 
-void set_GY85()
+void GY_85::init()
 {
     SetAccelerometer();
     SetCompass();
