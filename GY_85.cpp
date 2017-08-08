@@ -161,6 +161,7 @@ float* GY_85::readGyro()
 
 void GY_85::init()
 {
+    Wire.begin();
     SetAccelerometer();
     SetCompass();
     SetGyro();
