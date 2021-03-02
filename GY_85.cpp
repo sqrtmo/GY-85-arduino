@@ -151,8 +151,8 @@ float* GY_85::readGyro()
     }
     Wire.endTransmission();
     
-    axis[0] = ((buff[4] << 8) | buff[5]) - g_offx;
-    axis[1] = ((buff[2] << 8) | buff[3]) - g_offy;
+    axis[0] = ((buff[2] << 8) | buff[3]) - g_offx;
+    axis[1] = ((buff[4] << 8) | buff[5]) - g_offy;
     axis[2] = ((buff[6] << 8) | buff[7]) - g_offz;
     axis[3] = ((buff[0] << 8) | buff[1]);       // temperature
     
