@@ -2,10 +2,16 @@
 
 void GY_85::SetAccelerometer()
 {
-    //Put the ADXL345 into +/- 4G range by writing the value 0x01 to the DATA_FORMAT register.
+    //Put ADXL345 into measuring with range +/-4g
+    SetAccelerometer(G_RANGE_8);
+}
+
+void GY_85::SetAccelerometer(int acc_range)
+{
+    //Put the ADXL345 into measuring mode by writing the value for range to the DATA_FORMAT register.
     Wire.beginTransmission( ADXL345 );      // start transmission to device
     Wire.write( 0x31 );                     // send register address
-    Wire.write( 0x01 );                     // send value to write
+    Wire.write( acc_range & 0xFF );         // send value to write
     Wire.endTransmission();                 // end transmission
     
     //Put the ADXL345 into Measurement Mode by writing 0x08 to the POWER_CTL register.
@@ -161,7 +167,14 @@ float* GY_85::readGyro()
 
 void GY_85::init()
 {
-    SetAccelerometer();
+    SetAccelerometer(G_RANGE_8);
+    SetCompass();
+    SetGyro();
+}
+
+void GY_85::init(int acc_range)
+{
+    SetAccelerometer(acc_range);
     SetCompass();
     SetGyro();
 }
