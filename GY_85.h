@@ -14,6 +14,11 @@
 //#define DATAZ1 0x37          //Z-Axis Data 1
 #define HMC5883 (0x1E)         //gyro
 #define ITG3200 (0x68)         //compass
+#define G_RANGE_4 (0x0000)         // acc-range +/-2g
+#define G_RANGE_8 (0x0001)         // acc-range +/-4g
+#define G_RANGE_16 (0x0002)        // acc-range +/-8g
+#define G_RANGE_32 (0x0003)        // acc-range +/-16g
+
 
 
 class GY_85
@@ -24,9 +29,11 @@ private:
     void SetGyro();
     void SetCompass();
     void SetAccelerometer();
+    void SetAccelerometer(int acc_range);
     
 public:
     void   init();
+    void   init(int acc_range);
     int*   readFromAccelerometer();
     int*   readFromCompass();
     float* readGyro();
