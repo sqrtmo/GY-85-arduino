@@ -1,8 +1,13 @@
-#include "Arduino.h"
-#include <Wire.h>
-
 #ifndef GY_85_h
 #define GY_85_h
+
+#if ARDUINO >= 100
+ #include "Arduino.h"
+#else
+ #include "WProgram.h"
+#endif
+
+#include <Wire.h>
 
 //----------addresses----------//
 #define ADXL345 (0x53)         // Device address as specified in data sheet //ADXL345 accelerometer
@@ -16,8 +21,7 @@
 #define ITG3200 (0x68)         //compass
 
 
-class GY_85
-{
+class GY_85 {
     
 private:
     void GyroCalibrate();
