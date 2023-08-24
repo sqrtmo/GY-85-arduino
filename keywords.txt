@@ -1,0 +1,34 @@
+#######################################
+# Syntax Coloring Map For GY_85
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+GY_85	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+init	KEYWORD2
+readFromAccelerometer	KEYWORD2
+readFromCompass	KEYWORD2
+readGyro	KEYWORD2
+accelerometer_x	KEYWORD2
+accelerometer_y	KEYWORD2
+accelerometer_z	KEYWORD2
+compass_x	KEYWORD2
+compass_y	KEYWORD2
+compass_z	KEYWORD2
+gyro_x	KEYWORD2
+gyro_y	KEYWORD2
+gyro_z	KEYWORD2
+temp	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+#sample	LITERAL1
